@@ -11,6 +11,7 @@ class StoriesController < ApplicationController
         @story.user_id = current_user.id
         @story.title = params[:story][:title]
         @story.url = params[:story][:url]
+        @story.image = params[:story][:image]
         @story.save
         redirect_to '/'
     end
@@ -23,6 +24,8 @@ class StoriesController < ApplicationController
         @story = Story.find(params[:id])
         @story.title = params[:story][:title]
         @story.url = params[:story][:url]
+        @story.image = params[:story][:image]
+        byebug
         @story.save
         redirect_to '/'
     end
